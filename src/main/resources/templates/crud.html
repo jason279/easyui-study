@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{css/easyui/themes/default/easyui.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{css/easyui/themes/icon.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{css/easyui/themes/color.css}">
+<script type="text/javascript" th:src="@{js/easyui/jquery.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{js/easyui/jquery.easyui.min.js}"></script>
+</head>
+<body>
+	<h2>Basic CRUD Application</h2>
+	<table id="dg" title="My Users" class="easyui-datagrid"
+		style="width: 550px; height: 250px;"
+		th:url="@{/getUsers}"
+		data-options="showFooter:true,pagination:true,pageSize:2,pageList:[2,4,8],striped:true,toolbar:'#toolbar',method:'get',rownumbers:true,fitColumns:true,singleSelect:true,emptyMsg:'There is no user.'">
+		<thead>
+			<tr>
+				<th field="firstname" width="50">First Name</th>
+				<th field="lastname" width="50">Last Name</th>
+				<th field="phone" width="50">Phone</th>
+				<th field="email" width="50">Email</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"
+			onclick="newUser()">New User</a> <a href="#"
+			class="easyui-linkbutton" iconCls="icon-edit" plain="true"
+			onclick="editUser()">Edit User</a> <a href="#"
+			class="easyui-linkbutton" iconCls="icon-remove" plain="true"
+			onclick="destroyUser()">Remove User</a>
+	</div>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>
